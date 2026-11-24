@@ -18,6 +18,8 @@ def output_path():
 
 
 def main():
+    if not LINE.strip() or len(LINE) > 200:
+        raise ValueError("entry line must be 1-200 non-blank characters")
     path = output_path()
     parent = os.path.dirname(path)
     if parent:
